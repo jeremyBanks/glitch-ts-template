@@ -6,6 +6,8 @@ document.body.appendChild(HTML.element`<p>
   <strong>Hello</strong>, world! Let's fetch some info...
 </p>`);
 
+navigator.serviceWorker.register('/_sw.js');
+
 (async () => {
   const response = await fetch('/data.json');
   const data = await response.json() as ApiResponseData;

@@ -12,12 +12,11 @@ fse.readFile('./README.md', 'utf8').then(readmeRaw => {
 });
 
 const handleReadme: express.RequestHandler = (_, response) => {
-  response.send(HTML.string`<!doctype html>
+  response.send(HTML.string`
+    <!doctype html>
     <link rel="stylesheet" href="/styles/main.css" />
-
     <script type="module" src="/dist/client/main.js"></script>
-
-    <main id="readme">${readme || ''}</main>
+    <article id="readme">${readme || ''}</article>
   `);
 };
 

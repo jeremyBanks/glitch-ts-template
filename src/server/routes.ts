@@ -20,4 +20,7 @@ export const add = (server: express.Application) => {
 
   // Some data for the client to play with.
   server.get('/data.json', handleData);
+  
+  // Service workers need to be served at the top level to control everything.
+  server.use('/_sw.js', express.static('client.dist/client/service-worker.js'));
 };

@@ -16,7 +16,8 @@
     "@types/node-sass": "^3.10.32",
     "node-sass": "^4.5.3",
     "@types/body-parser": "^1.16.4",
-    "body-parser": "^1.17.2"
+    "body-parser": "^1.17.2",
+    "sw-toolbox": "^3.6.0"
   },
   "scripts": {
     "start": "./start.sh"
