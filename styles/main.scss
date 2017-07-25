@@ -6,6 +6,10 @@ body {
   max-width: 45em;
 }
 
+code {
+  user-select: all;
+}
+
 #readme {
   border: 1px solid #888;
   background: rgb(255, 250, 240);
