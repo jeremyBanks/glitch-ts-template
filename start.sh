@@ -1,5 +1,6 @@
 set -eu;
 
+
 rm -rf *dist*/;
 
 >&2 echo "Building src/ for server...";
