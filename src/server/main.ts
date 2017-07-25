@@ -7,6 +7,9 @@ import * as routes from './routes.js';
 const server = express();
 
 server.use(bodyParser.urlencoded({extended: false}));
+server.use(bodyParser.json());
+server.use(bodyParser.text());
+server.use(bodyParser.raw());
 
 routes.add(server);
 

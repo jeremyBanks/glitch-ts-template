@@ -1,5 +1,5 @@
 import * as express from 'express';
-import * as typescript from 'typescript'
+import * as typescript from 'typescript';
 
 import {ApiResponseData} from '../common/api.js';
 

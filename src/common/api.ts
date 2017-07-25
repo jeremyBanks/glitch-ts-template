@@ -1,4 +1,4 @@
-import * as t from 'runtypes'
+import * as t from 'runtypes';
 
 
 export const ApiResponseData = t.Record({
