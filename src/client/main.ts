@@ -7,8 +7,20 @@ document.body.appendChild(HTML.element`<p>
   <strong>Hello</strong>, world! Let's fetch some info...
 </p>`);
 
-// Register our service worker.
-navigator.serviceWorker.register('/_sw.js', {type: 'module'} as any);
+// Register/replace the root scope service worker.
+navigator.serviceWorker.register('/dist/client/service-worker.js', {
+  type: 'module',
+  scope: '/'
+} as any);
+
+// Remove any other (non-root scope) service workers.
+navigator.serviceWorker.getRegistrations().then((registrations: any[]) => {
+  for (const registration of registrations) {
+    if (/^https:\/\/[^/]+\/./.test(registration.scope)) {
+      registration.unregister();
+    }
+  }
+});
 
 // Fetch some simple data and display it.
 (async () => {

@@ -10,7 +10,7 @@
 
 // We use a subclass of String for our HTML objects.
 // The implementation/constructor are not exported.
-const HTMLRuntimeType = class HTML extends String {}
+const HTMLRuntimeType = class HTML extends String {};
 
 // But we do export the class's type, under the name HTML.
 const htmlInstance = new HTMLRuntimeType;
