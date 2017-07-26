@@ -8,7 +8,7 @@ import HTML from '../common/html.js';
 // Asynchronously load and render the README.
 let readme: undefined|HTML;  
 fse.readFile('./README.md', 'utf8').then(readmeRaw => {
-  readme = HTML.unsafeRaw(MarkdownIt().render(readmeRaw));
+  readme = HTML.unsafeRaw(MarkdownIt({html: true}).render(readmeRaw));
 });
 
 const handleReadme: express.RequestHandler = (_, response) => {
