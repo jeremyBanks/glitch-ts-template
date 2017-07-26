@@ -8,7 +8,7 @@ document.body.appendChild(HTML.element`<p>
 </p>`);
 
 // Register our service worker.
-navigator.serviceWorker.register('/_sw.js');
+navigator.serviceWorker.register('/_sw.js', {type: 'module'} as any);
 
 // Fetch some simple data and display it.
 (async () => {
