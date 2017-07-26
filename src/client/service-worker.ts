@@ -37,12 +37,15 @@ interface GoogleServiceWorkerToolbox {
     debug: boolean
   },
   router: {
-    get(path: string, handler: {}, options?: {}): void
+    default: {},
+    get(path: string, handler: 'HANDLER', options?: {}): void,
+    post(path: string, handler: 'HANDLER', options?: {}): void,
+    any(path: string, handler: 'HANDLER', options?: {}): void
   },
-  readonly networkFirst: {},
-  readonly cacheFirst: {},
-  readonly fastest: {},
-  readonly networkOnly: {}
+  readonly networkFirst: 'HANDLER',
+  readonly cacheFirst: 'HANDLER',
+  readonly fastest: 'HANDLER',
+  readonly networkOnly: 'HANDLER'
 }
 
 importScripts('/node_modules/sw-toolbox/sw-toolbox.js');
