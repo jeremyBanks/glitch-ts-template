@@ -17,10 +17,13 @@ export const add = (server: express.Application) => {
   // Some data for the client to play with.
   server.get('/data.json', handleData);
   
-  // We need this header to be able to register root service workers from here.
-  server.use('/dist/client/', express.static('client.dist/client/', {
-    setHeaders: response => response.set('Service-Worker-Allowed', '/')
-  }));
+  // We need this header to be able to the script as a root service worker.
+  server.use(
+    '/dist/client/service-worker.js',
+    express.static('client.dist/client/service-worker.js', {
+      setHeaders: response => response.set('Service-Worker-Allowed', '/')
+    })
+  );
 
   // Files that have been built for browser clients.
   server.use('/dist', express.static('client.dist'));
